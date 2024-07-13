@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keylogger Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #log {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keylogger Example</h1>
+    <p>Type something below:</p>
+    <div id="log"></div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            var logDiv = document.getElementById('log');
+            var key = event.key;
+
+            var logEntry = document.createElement('div');
+            logEntry.textContent = `Key pressed: ${key}`;
+            logDiv.appendChild(logEntry);
+
+            console.log(`Key pressed: ${key}`);
+        });
+    </script>
+</body>
+</html>
